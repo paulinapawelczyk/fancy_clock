@@ -170,8 +170,8 @@ body {
 }
 
 .clock__seconds {
-  width: 150px;
-  height: 150px;
+  width: 130px;
+  height: 130px;
 }
 
 .clock__seconds::before {
