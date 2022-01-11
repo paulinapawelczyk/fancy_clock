@@ -64,3 +64,122 @@ body {
   max-width: 968px;
   margin: 0 var(--mb-1);
 }
+
+/* clock */
+.clock__container {
+  height: 100vh;
+  grid-template-rows: 1fr max-content;
+}
+
+.clock__content {
+  align-self: center;
+}
+
+.clock__circle {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  box-shadow: -6px -6px 16px var(--white-color),
+    6px 6px 16px hsla(var(--hue-color), 30%, 85%, 1),
+    inset 6px 6px 16px hsla(var(--hue-color), 30%, 85%, 1),
+    inset -6px -6px 16px var(--white-color);
+  border-radius: 50%;
+  justify-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock__twelve,
+.clock__three,
+.clock__six,
+.clock__nine {
+  position: absolute;
+  width: 1rem;
+  height: 1px;
+  background-color: var(--text-color-light);
+}
+
+.clock__twelve,
+.clock__six {
+  transform: translateX(-50%) rotate(90deg);
+}
+
+.clock__twelve {
+  top: 1rem;
+  left: 50%;
+}
+
+.clock__three {
+  right: 1rem;
+}
+.clock__six {
+  bottom: 1rem;
+  left: 50%;
+}
+
+.clock__nine {
+  left: 1rem;
+}
+
+.clock__middle {
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: var(--text-color);
+  border-radius: 50%;
+  border: 2px solid var(--body-color);
+  z-index: var(--z-tooltip);
+}
+
+.clock__hour,
+.clock__minutes,
+.clock__seconds {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+}
+
+.clock__hour {
+  width: 100px;
+  height: 100px;
+}
+
+.clock__hour::before {
+  content: '';
+  position: absolute;
+  background-color: var(--text-color);
+  width: 0.2rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  z-index: var(--z-normal);
+}
+
+.clock__minutes {
+  width: 140px;
+  height: 140px;
+}
+
+.clock__minutes::before {
+  content: '';
+  position: absolute;
+  background-color: var(--text-color);
+  width: 0.2rem;
+  height: 4rem;
+  border-radius: 0.75rem;
+  z-index: var(--z-normal);
+}
+
+.clock__seconds {
+  width: 150px;
+  height: 150px;
+}
+
+.clock__seconds::before {
+  content: '';
+  position: absolute;
+  background-color: var(--text-color);
+  width: 0.025rem;
+  height: 5rem;
+  border-radius: 0.75rem;
+  z-index: var(--z-normal);
+}
