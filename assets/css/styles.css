@@ -14,7 +14,7 @@
   /* Font Typography Weight*/
   --body-font: 'Quicksand', sans-serif;
   --font-size-large: 3rem; /* 48px */
-  --font-size-medium: 0.815rem; /* 13px */
+  --font-size-medium: 1.5rem;
   --font-size-small: 0.75rem; /* 12px */
   --font-size-smallest: 0.625rem; /* 10px */
 
@@ -63,6 +63,7 @@ body {
 .container {
   max-width: 968px;
   margin: 0 var(--mb-1);
+  margin: 0 auto;
 }
 
 /* clock */
@@ -73,6 +74,7 @@ body {
 
 .clock__content {
   align-self: center;
+  row-gap: 3.5rem;
 }
 
 .clock__circle {
@@ -182,4 +184,28 @@ body {
   height: 5rem;
   border-radius: 0.75rem;
   z-index: var(--z-normal);
+}
+
+.clock__text {
+  display: flex;
+  justify-content: center;
+}
+
+.clock__text-hour,
+.clock__text-minutes,
+.clock__text-seconds {
+  font-size: var(--font-size-large);
+  font-weight: var(--font-weight-medium);
+  color: var(--title-color);
+}
+
+.clock__text-zone {
+  font-weight: var(--font-weight-medium);
+  font-size: var(--font-size-small);
+}
+
+.clock__date {
+  text-align: center;
+  font-size: var(--font-size-medium);
+  font-weight: var(--font-weight-medium);
 }
