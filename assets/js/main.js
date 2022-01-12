@@ -86,3 +86,46 @@ const textDate = () => {
 };
 
 setInterval(textDate, 1000); //launch clock function each 1s
+
+// Dark-Light Theme
+
+const themeButton = document.getElementById('theme_button');
+const darkThemeIndicator = 'dark_theme';
+const lightThemeButtonIcon = 'bxs-sun';
+
+// Selection
+const selectedTheme = localStorage.getItem('selected-theme');
+const selectedIcon = localStorage.getItem('selected-icon');
+
+// If already user made a choice
+if (selectedTheme) {
+  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](
+    darkThemeIndicator,
+  );
+  themeButton.classList[selectedIcon === 'bxs-moon' ? 'add' : 'remove'](
+    lightThemeButtonIcon,
+  );
+}
+
+const getCurrentTheme = () => {
+  return document.body.classList.contains(darkThemeIndicator)
+    ? 'dark'
+    : 'light';
+};
+
+const getCurrentThemeIcon = () => {
+  return themeButton.classList.contains(lightThemeButtonIcon)
+    ? 'bxs-moon'
+    : 'bxs-sun';
+};
+
+const changeTheme = () => {
+  document.body.classList.toggle(darkThemeIndicator);
+  themeButton.classList.toggle(lightThemeButtonIcon);
+
+  //save user choice
+  localStorage.setItem('selected-theme', getCurrentTheme());
+  localStorage.setItem('selected-icon', getCurrentThemeIcon());
+};
+
+themeButton.addEventListener('click', changeTheme);
